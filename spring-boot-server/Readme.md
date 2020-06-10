@@ -19,6 +19,12 @@ Click Run
 server.port: 7777
 ```
 
+| Annotation   | DESC                             |
+| ------------ | -------------------------------- |
+| RequestParam | 参数                             |
+| PostMapping  | 表示 处理的是 Post 请求          |
+| ResponseBody | 返回值。可以是 a Json，String 等 |
+
 # 1 Get Method
 
 # 2 Post Method
