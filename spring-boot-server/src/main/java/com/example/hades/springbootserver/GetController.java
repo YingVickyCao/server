@@ -15,7 +15,6 @@ public class GetController {
      * Way 1:  无参数
      */
     /*
-      Way 1:  无参数
       http://localhost:7777/hello
       "World"
      */
@@ -29,7 +28,6 @@ public class GetController {
      * Way 2 : Path has variable
      */
     /*
-     Way 2 : Path has variable
      http://localhost:7777/hi/vicky
      Hi,vicky
 
