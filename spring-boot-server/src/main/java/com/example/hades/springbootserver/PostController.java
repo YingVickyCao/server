@@ -20,19 +20,14 @@ public class PostController {
      */
     @ResponseBody
     @PostMapping("/login")
-//    Spring_Boost_Post_Postman_1.png
 //    public LoginResult login(@RequestParam("name") String name, @RequestParam("pwd") String pwd) {
-
-    // Spring_Boost_Post_Postman_2.png
     public LoginResult login(@RequestParam(value = "name", defaultValue = "mock_name") String name, @RequestParam(value = "pwd", required = false) String pwd) {
         return new LoginResult("ok", System.currentTimeMillis());
     }
 
-    /**
-     * http://localhost:7777/login2
-     * <p>
-     * Post Way 2：Receive map
-     * Spring_Boost_Post_Postman_1.png
+    /*
+      http://localhost:7777/login2
+      Post Way 2：Receive map
      */
     @ResponseBody
     @PostMapping("/login2")
@@ -41,14 +36,12 @@ public class PostController {
             System.err.println(item);
         }
         return new LoginResult("ok", System.currentTimeMillis());
-//        return name + pwd;
     }
 
-    /**
-     * http://localhost:7777/login3
-     * <p>
-     * Post Way 3：Receive array
-     * Spring_Boost_Post_Postman_3.png
+    /*
+      http://localhost:7777/login3
+      Post Way 3：Receive array
+      Spring_Boost_Post_Postman_3.png
      */
     @ResponseBody
     @PostMapping("/login3")
@@ -79,6 +72,8 @@ public class PostController {
 //        return new LoginResult("ok", System.currentTimeMillis());
 //    }
 
+    @ResponseBody
+    @PostMapping("/login4")
     public LoginResult login4(@ModelAttribute("u") User user) {
         System.out.println("login4," + user.toString());
         return new LoginResult("ok", System.currentTimeMillis());
@@ -103,6 +98,5 @@ public class PostController {
         }
         System.out.println("login5 <-----");
         return new LoginResult("ok", System.currentTimeMillis());
-//        return name + pwd;
     }
 }
