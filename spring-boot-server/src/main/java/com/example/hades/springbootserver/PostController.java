@@ -1,4 +1,4 @@
-package com.example.hades.server;
+package com.example.hades.springbootserver;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;

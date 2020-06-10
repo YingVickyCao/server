@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example.hades</groupId>
-    <artifactId>server</artifactId>
+    <artifactId>spring-boot-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>server</name>
+    <name>spring-boot-server</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -41,7 +41,6 @@
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
-                <!-- 将应用打包成一个可执行的jar包  -->
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>

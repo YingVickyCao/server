@@ -1,4 +1,4 @@
-package com.example.hades.server;
+package com.example.hades.springbootserver;
 
 public class LoginResult {
     String status;
