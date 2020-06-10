@@ -9,9 +9,11 @@ import java.util.Map;
 
 @Controller
 public class PostController {
+    /**
+     * Post Way 1：Receive form-data
+     */
     /*
       http://localhost:7777/login
-      Post Way 1：Receive form-data
 
       If 没有传递参数，报错。
       解决方法：
@@ -25,10 +27,10 @@ public class PostController {
         return new LoginResult("ok", System.currentTimeMillis());
     }
 
-    /*
-      http://localhost:7777/login2
-      Post Way 2：Receive map
+    /**
+     * Post Way 2：Receive map
      */
+    // http://localhost:7777/login2
     @ResponseBody
     @PostMapping("/login2")
     public LoginResult login2(@RequestParam Map<String, Object> params) {
@@ -38,10 +40,10 @@ public class PostController {
         return new LoginResult("ok", System.currentTimeMillis());
     }
 
-    /*
-      http://localhost:7777/login3
-      Post Way 3：Receive array
+    /**
+     * Post Way 3：Receive array
      */
+    // http://localhost:7777/login3
     @ResponseBody
     @PostMapping("/login3")
     public LoginResult login3(@RequestParam("name") String[] names) {
@@ -51,9 +53,11 @@ public class PostController {
         return new LoginResult("ok", System.currentTimeMillis());
     }
 
+    /**
+     * Post Way 4：Receive Object / Json of Bean
+     */
     /*
       http://localhost:7777/login4
-      Post Way 3：Receive Object / Json of Bean
 
       传递Json of Bean 也可以
       User：必须有set和get函数，否则ERROR:Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.example.hades.server.LoginResult]
@@ -66,7 +70,6 @@ public class PostController {
 //        System.out.println("login4," + user.toString());
 //        return new LoginResult("ok", System.currentTimeMillis());
 //    }
-
     @ResponseBody
     @PostMapping("/login4")
     public LoginResult login4(@ModelAttribute("u") User user) {
@@ -79,10 +82,10 @@ public class PostController {
         binder.setFieldDefaultPrefix("u.");
     }
 
-    /*
-        http://localhost:7777/login5
-        Post Way 4 : Receive a Json of List
+    /**
+     * Post Way 5 : Receive a Json of List
      */
+    // http://localhost:7777/login5
     @ResponseBody
     @PostMapping("/login5")
     public LoginResult login5(@RequestBody List<User> users) {
