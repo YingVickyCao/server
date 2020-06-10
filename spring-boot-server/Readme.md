@@ -38,10 +38,10 @@ public LoginResult login(@RequestParam("name") String name, @RequestParam("pwd")
 
 ![Spring_Boost_Post_Postman_1](https://yingvickycao.github.io/img/Spring_Boost_Post_Postman_1.png)
 
-If 没有传递参数，报错。  
-解决方法：  
-方法 1：使用 required = false 标注参数是非必须的。  
-方法 2：使用 defaultValue 给参数指定个默认值。
+- If 没有传递参数，报错。  
+  解决方法：  
+  方法 1：使用 required = false 标注参数是非必须的。  
+  方法 2：使用 defaultValue 给参数指定个默认值。
 
 ```java
 @ResponseBody
@@ -73,11 +73,9 @@ public LoginResult login2(@RequestParam Map<String, Object> params) {
 
 ## Way 3：Receive Array
 
-```
+```java
 /*
     http://localhost:7777/login3
-    Post Way 3：Receive array
-    Spring_Boost_Post_Postman_3.png
 */
 @ResponseBody
 @PostMapping("/login3")
@@ -104,6 +102,8 @@ public LoginResult login4(User user) {
 
 ![Spring_Boost_Post_Postman_4](https://yingvickycao.github.io/img/Spring_Boost_Post_Postman_4.png)
 
+OR
+
 ![Spring_Boost_Post_Postman_6](https://yingvickycao.github.io/img/Spring_Boost_Post_Postman_6.png)
 
 - User：必须有 set 和 get 函数，否则 ERROR:Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.example.hades.server.LoginResult]
@@ -111,11 +111,11 @@ public LoginResult login4(User user) {
 - 如果传递的参数有前缀，且前缀与接收实体类的名称相同，那么参数也是可以正常传递的  
   ![Spring_Boost_Post_Postman_5](https://yingvickycao.github.io/img/Spring_Boost_Post_Postman_5.png)
 
-![Spring_Boost_Post_Postman_7](https://yingvickycao.github.io/img/Spring_Boost_Post_Postman_7.png)
-
 - 如果传递的参数有前缀，且前缀与接收实体类的名称不同相，那么参数无法正常传递:使用@InitBinder 解决这个问题，通过参数预处理来指定使用的前缀为 u.
 
 ```java
+@ResponseBody
+@PostMapping("/login4")
 public LoginResult login4(@ModelAttribute("u") User user) {
     System.out.println("login4," + user.toString());
     return new LoginResult("ok", System.currentTimeMillis());
@@ -126,6 +126,8 @@ private void initBinder(WebDataBinder binder) {
     binder.setFieldDefaultPrefix("u.");
 }
 ```
+
+![Spring_Boost_Post_Postman_7](https://yingvickycao.github.io/img/Spring_Boost_Post_Postman_7.png)
 
 ## Way 5：Receive a Json of List
 

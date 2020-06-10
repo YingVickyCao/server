@@ -41,7 +41,6 @@ public class PostController {
     /*
       http://localhost:7777/login3
       Post Way 3：Receive array
-      Spring_Boost_Post_Postman_3.png
      */
     @ResponseBody
     @PostMapping("/login3")
@@ -55,14 +54,10 @@ public class PostController {
     /*
       http://localhost:7777/login4
       Post Way 3：Receive Object / Json of Bean
-      Spring_Boost_Post_Postman_4.png
-      Spring_Boost_Post_Postman_6.png : 传递Json of Bean 也可以
 
+      传递Json of Bean 也可以
       User：必须有set和get函数，否则ERROR:Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.example.hades.server.LoginResult]
-
       如果传递的参数有前缀，且前缀与接收实体类的名称相同，那么参数也是可以正常传递的
-      Spring_Boost_Post_Postman_5.png
-
       如果传递的参数有前缀，且前缀与接收实体类的名称不同相，那么参数无法正常传递:使用@InitBinder 解决这个问题，通过参数预处理来指定使用的前缀为 u.
      */
 //    @ResponseBody
@@ -86,8 +81,7 @@ public class PostController {
 
     /*
         http://localhost:7777/login5
-         Post Way 4 : Receive a Json of List
-         Spring_Boost_Post_Postman_5.png
+        Post Way 4 : Receive a Json of List
      */
     @ResponseBody
     @PostMapping("/login5")
