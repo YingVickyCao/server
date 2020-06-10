@@ -323,3 +323,4 @@ public LoginResult login5(@RequestBody List<User> users) {
 # Refs
 
 - https://www.hangge.com/blog/cache/detail_2485.html
+- https://www.hangge.com/blog/cache/detail_2484.html
