@@ -1,4 +1,4 @@
-# Spring Boot Sever
+# Server Created by Spring Boot
 
 - Environment:  
   Postman  
@@ -8,7 +8,6 @@
   Spring Boot(Java)
 
 - How to run server?
-
 Click Run
 
 ```
@@ -30,7 +29,6 @@ server.port: 7777
 ## Way 1: 无参数
 
 ```java
-
 /*
     http://localhost:7777/hello
     "World"
