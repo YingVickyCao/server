@@ -1,5 +1,7 @@
 package com.example.hades.springbootserver;
 
+import com.example.hades.springbootserver.bean.Phone;
+import com.example.hades.springbootserver.bean.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;

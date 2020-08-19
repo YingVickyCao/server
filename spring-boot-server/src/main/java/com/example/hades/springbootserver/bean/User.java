@@ -1,4 +1,4 @@
-package com.example.hades.springbootserver;
+package com.example.hades.springbootserver.bean;
 
 public class User {
     private String name;
