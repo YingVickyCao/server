@@ -12,8 +12,8 @@ import javax.servlet.http.HttpSession;
 public class TestRedirect {
 
     // http://localhost:7777/before_redirect/40
-    @RequestMapping("/before_redirect/{code}")
-    public String redirectView(@PathVariable("code") int code, HttpSession session) {
+    @RequestMapping("/before_redirect/{num}")
+    public String redirectView(@PathVariable("num") int num, HttpSession session) {
         //这种跳转都是302跳转，通过一个redirect前缀告诉请求，要跳转到首页
         //所有的redirect请求都会跳转到目标
         //通过session来传递信息
@@ -29,7 +29,7 @@ public class TestRedirect {
         // 显示重定向中的session
         return session.getAttribute("msg").toString();
     }
-    
+
     @RequestMapping("/result")
     @ResponseBody
     public String result(HttpSession session) {
