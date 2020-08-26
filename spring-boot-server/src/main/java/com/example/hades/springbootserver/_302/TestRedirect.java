@@ -1,4 +1,4 @@
-package com.example.hades.springbootserver;
+package com.example.hades.springbootserver._302;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
