@@ -317,6 +317,15 @@ public LoginResult login5(@RequestBody List<User> users) {
 
 ![Spring_Boost_Post_Postman_8](https://yingvickycao.github.io/img/Spring_Boost_Post_Postman_8.png)
 
+# 3 302
+https://blog.csdn.net/yang_csdnForOBTS/article/details/81981185  
+
+在spring中，有两个重定向类型：  
+301，永久性跳转 
+302，暂时性跳转  
+
+默认调用302。
+
 # Refs
 
 - https://www.hangge.com/blog/cache/detail_2485.html
