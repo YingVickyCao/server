@@ -1,0 +1,94 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>使用Intent协议在webview中跳转三方app</title>
+</head>
+
+<!--目标：测试点击浏览器中的url(deep links)，是否能跳转到目标app（receive_app_links） 
+具体：使用http-server启动 https://github.com/YingVickyCao/server/http_server的本地服务器，然后在手机中访问这个网址的这个html文件。点击这些link，看看是否能跳转到 
+-->
+<!-- Target : click link from web page in broswer  to jump app -->
+
+
+<!-- <head>
+    <title>Web access app</title>
+    <script>
+        function openApp() {
+            // window.location : after click , url address of web browser is auto changged
+            window.location = "intent://open.my.app?menucode=HotNew&articleId=N9647#Intent;scheme=app;package=com.example.receive_app_links;end"
+        }
+    </script>
+</head> -->
+
+<body style="font-size: 60px;">
+    <!-- <h1 onclick="openApp()" value="Open App" style="height: 100px;background-color: red;">Open app</h1> -->
+
+
+    <!-- 测试用例： -->
+    <!-- https://developer.android.google.cn/studio/ -->
+    <!-- app://open.my.app -->
+    <!-- app://developer.android.google.cn/studio/ -->
+    <!-- https://open.my.app -->
+
+    <!-- URI：scheme://host:port/path?qureyParameter=queryString -->
+
+    <!-- <p>Way 1 : Intent.URI_INTENT_SCHEME </p> -->
+    <!-- https://developer.android.google.cn/reference/android/content/Intent#URI_INTENT_SCHEME -->
+    <!-- intent://host/relativePath?query#Intent;package=[string];action=[string];category=[string];component=[string];scheme=[string];end/-->
+    <a
+        href="intent://open.my.app?menucode=HotNew&articleId=N9647#Intent;scheme=https;package=com.example.receive_app_links;end">3-1-1</a><br /><br /><br />
+    <a
+        href="intent://open.my.app?menucode=HotNew&articleId=N9647#Intent;scheme=app;package=com.example.receive_app_links;end">3-1-2</a><br /><br /><br />
+
+    <a
+        href="intent://developer.android.google.cn/studio/#Intent;scheme=https;package=com.example.receive_app_links;end">3-1-3</a><br /><br /><br />
+
+    <a
+        href="intent://developer.android.google.cn/studio/#Intent;scheme=app;package=com.example.receive_app_links;end">3-1-4</a><br /><br /><br />
+
+
+    <!-- <p>Way 2 : Intent.URI_ANDROID_APP_SCHEME</p> -->
+    <!-- https://developer.android.google.cn/reference/android/content/Intent#URI_ANDROID_APP_SCHEME -->
+    <!--  android-app://{package_id}[/{scheme}[/{host}[/{path}]]][#Intent;{...}] -->
+    <!-- 实际上这样才能跳转 {schema}://host/relativePath?query#Intent;package=[string];scheme=[string];end/-->
+
+    <a
+        href="https://developer.android.google.cn/studio/#Intent;scheme=https;package=com.example.receive_app_links;end">3-2-1</a><br /><br /><br />
+
+
+    <a
+        href="https://developer.android.google.cn/studio/#Intent;scheme=app;package=com.example.receive_app_links;end">3-2-2</a><br /><br /><br />
+
+    <a
+        href="app://developer.android.google.cn/studio/#Intent;scheme=https;package=com.example.receive_app_links;end">3-2-3</a><br /><br /><br />
+
+
+    <a
+        href="app://developer.android.google.cn/studio/#Intent;scheme=app;package=com.example.receive_app_links;end">3-2-4</a><br /><br /><br />
+
+
+    <a
+        href="app://open.my.app?menucode=HotNew&articleId=N9647#Intent;scheme=app;package=com.example.receive_app_links;end">3-2-5</a><br /><br /><br />
+
+    <a
+        href="app://open.my.app?menucode=HotNew&articleId=N9647#Intent;scheme=https;package=com.example.receive_app_links;end">3-2-6</a><br /><br /><br />
+
+    <a
+        href="https://open.my.app?menucode=HotNew&articleId=N9647#Intent;scheme=app;package=com.example.receive_app_links;end">3-2-7</a><br /><br /><br />
+
+    <a
+        href="https://open.my.app?menucode=HotNew&articleId=N9647#Intent;scheme=https;package=com.example.receive_app_links;end">3-2-8</a><br /><br /><br />
+
+    <a href="https://open.my.app?menucode=HotNew&articleId=N9647#Intent;end">3-2-9</a><br /><br /><br />
+
+    <a href="app://open.my.app?menucode=HotNew&articleId=N9647#Intent;end">3-2-10</a><br /><br /><br />
+
+    <a href="https://developer.android.google.cn/studio/#Intent;end">3-2-11</a><br /><br /><br />
+
+    <a href="app://developer.android.google.cn/studio/#Intent;end">3-2-12</a><br /><br /><br />
+
+
+</body>
+
+</html>

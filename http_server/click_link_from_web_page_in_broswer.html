@@ -1,0 +1,43 @@
+<!Doctype html>
+<html>
+
+<!-- 目的：测试点击其他app中的url（deep links），能否跳转到目标app
+    具体：这个html在 other app （other_app_having_app_links）中加载，然后点击它的url（deep links），测试它是否能跳转到我的app（receive_app_links） 
+-->
+
+
+<head>
+    <title>Web links</title>
+</head>
+
+<!-- 
+测试方法1: Target : test click link from other app (links_in_other_app.html)
+测试方法2: Target : click link from web page in broswer(click_link_from_web_page_in_broswer.html)
+测试方法3: adb shell am start -a android.intent.action.VIEW -d "url" 
+https://developer.android.google.cn/studio/ => adb shell am start -a android.intent.action.VIEW -d "https://developer.android.google.cn/studio/"
+
+三种方式的效果是一样的 
+-->
+
+<body>
+    <!-- 测试用例： -->
+    <!-- https://developer.android.google.cn/studio/ -->
+    <!-- app://open.my.app -->
+    <!-- app://developer.android.google.cn/studio/ -->
+    <!-- https://open.my.app -->
+    <!-- https://6c04-114-87-148-43.ngrok.io/recipe/ 内网穿透 -->
+
+    <a
+        href="https://developer.android.google.cn/studio/">https://developer.android.google.cn/studio/</a><br /><br /><br />
+
+    <a href="app://open.my.app">app://open.my.app</a><br /><br /><br />
+
+    <a href="app://developer.android.google.cn/studio/">app://developer.android.google.cn/studio/</a><br /><br /><br />
+
+    <a href="https://open.my.appp">https://open.my.app</a><br /><br /><br />
+
+    <a
+        href="https://6c04-114-87-148-43.ngrok.io/recipe/">https://6c04-114-87-148-43.ngrok.io/recipe/</a><br /><br /><br />
+</body>
+
+</html>
